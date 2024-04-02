@@ -47,6 +47,28 @@
             </div>
 
             <div class="mb-3">
+                <label for="type_id" class="form-label">Types</label>
+                <select
+                    class="
+                        form-select
+                        form-select-lg
+                        @error('type_id') is_invalid @enderror
+                        "
+                    name="type_id"
+                    id="type_id"
+                >
+                    <option value="">Select one</option>
+
+                    @foreach ($types as $item)
+                    <option
+                        value="{{ $item->id }}">
+                        {{ $item->name }}
+                    </option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="mb-3">
                 <label for="creation_date" class="form-label">Creation Date</label>
                 <input
                     type="date"
