@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Type extends Model
 {
-    use HasFactory;
+    public function models()
+    {
+        return $this->hasMany(Project::class);
+    }
 }
