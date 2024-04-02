@@ -10,5 +10,11 @@
         @if ($project->cover_image)
             <img src="{{asset('/storage/' . $project->cover_image) }}" alt="" style="width: 400px">
         @endif
+
+        <p>
+            <strong>
+                {{ $project->type ? $project->type->name : 'Nessun tipo inserito' }}
+            </strong>
+        </p>
     </main>
 @endsection
