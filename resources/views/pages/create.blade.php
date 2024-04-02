@@ -60,9 +60,9 @@
                     <option value="">Select one</option>
 
                     @foreach ($types as $item)
-                    <option
-                        value="{{ $item->id }}">
-                        {{ $item->name }}
+                    <option  value="{{ $item->id }}"
+                        {{ $item->id == old('tipe_id') ? 'selected' : '' }}
+                        >{{ $item->type }}
                     </option>
                     @endforeach
                 </select>

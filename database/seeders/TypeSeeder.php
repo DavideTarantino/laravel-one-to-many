@@ -6,20 +6,22 @@ use App\Models\Type;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+use Illuminate\Support\Str;
+
 class TypeSeeder extends Seeder
 {
     public function run(): void
     {
         $types = [
-            ['name' => 'Individual'],
-            ['name' => 'Four Hands'],
-            ['name' => 'Group Projects'],
+            'Individual',
+            'Four Hands',
+            'Group Projects',
         ];
 
         foreach ( $types as $item ){
             $newType = new Type();
 
-            $newType->type = $item['name'];
+            $newType->type = $item;
 
             $newType->save();
         }

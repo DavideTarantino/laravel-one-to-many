@@ -71,7 +71,7 @@
                     <option
                         value="{{ $item->id }}"
                         {{ $item->id == old('type_id', $project->type ? $project->type->id : '') ? 'selected' : '' }}
-                        >{{ $item->name }}</option>
+                        >{{ $item->type }}</option>
                     @endforeach
                 </select>
             </div>

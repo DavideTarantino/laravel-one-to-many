@@ -13,7 +13,7 @@
 
         <p>
             <strong>
-                {{ $project->type ? $project->type->name : 'Nessun tipo inserito' }}
+                {{ $project->type ? $project->type->type : 'Nessun tipo inserito' }}
             </strong>
         </p>
     </main>
