@@ -24,7 +24,9 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('pages.create');
+        $types = Type::all();
+
+        return view('pages.create', compact('types'));
     }
 
     /**
@@ -35,8 +37,8 @@ class ProjectController extends Controller
         $val_data = $request->validated();
 
         $slug = Project::generateSlug($request->name);
-
         $val_data['slug'] = $slug;
+
 
         if( $request->hasFile('cover_image') ){
 
@@ -45,6 +47,7 @@ class ProjectController extends Controller
 
             $val_data['cover_image'] = $path;
         }
+
 
         $new_project = Project::create( $val_data );
 
@@ -64,7 +67,9 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('pages.edit', compact('project'));
+        $types = Type::all();
+
+        return view('pages.edit', compact('project', 'types'));
     }
 
     /**
